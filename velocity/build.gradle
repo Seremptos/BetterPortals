@@ -1,7 +1,7 @@
 repositories {
     maven {
         name 'velocity'
-        url 'https://repo.velocitypowered.com/snapshots/'
+        url 'https://repo.papermc.io/repository/maven-public/'
     }
 }
 
@@ -15,7 +15,7 @@ task setVersion(type: Copy) {
 tasks.jar.dependsOn setVersion
 
 dependencies {
-    compileOnly 'com.velocitypowered:velocity-api:3.1.0'
+    compileOnly 'com.velocitypowered:velocity-api:3.4.0-SNAPSHOT'
 
     implementation project(':shared')
     implementation project(':proxy')

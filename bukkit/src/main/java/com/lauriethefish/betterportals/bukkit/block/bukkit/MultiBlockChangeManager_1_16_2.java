@@ -92,7 +92,7 @@ public class MultiBlockChangeManager_1_16_2 implements IMultiBlockChangeManager 
 
             try {
                 ProtocolLibrary.getProtocolManager().sendServerPacket(player, packet);
-            }   catch(InvocationTargetException ex) {
+            }   catch(Exception ex) {
                 ex.printStackTrace();
             }
         }

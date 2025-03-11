@@ -1,17 +1,17 @@
 plugins {
     id 'java-library'
-    id 'maven-publish'
+//    id 'maven-publish'
 }
 
 apply plugin: 'java-library'
-apply plugin: 'maven-publish'
+//apply plugin: 'maven-publish'*/
 
 repositories {
     mavenCentral()
     maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
-    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
 }
-
+/*
 java {
     withJavadocJar()
     withSourcesJar()
@@ -35,8 +35,8 @@ afterEvaluate {
             }
         }
     }
-}
+}*/
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT'
+    compileOnly 'io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT'
 }

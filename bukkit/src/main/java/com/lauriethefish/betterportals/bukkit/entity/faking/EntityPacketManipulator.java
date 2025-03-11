@@ -386,7 +386,7 @@ public class EntityPacketManipulator implements IEntityPacketManipulator {
             for (Player player : players) {
                 protocolManager.sendServerPacket(player, packet);
             }
-        }   catch(InvocationTargetException ex) {
+        }   catch(Exception ex) {
             throw new RuntimeException("Failed to send packet", ex);
         }
     }

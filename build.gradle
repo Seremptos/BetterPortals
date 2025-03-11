@@ -29,17 +29,26 @@ allprojects {
         implementation 'org.jetbrains:annotations:23.0.0'
         implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
-        compileOnly 'org.projectlombok:lombok:1.18.24'
-        testImplementation 'org.projectlombok:lombok:1.18.22'
-        annotationProcessor 'org.projectlombok:lombok:1.18.22'
-        testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
-        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+        compileOnly 'org.projectlombok:lombok:1.18.36'
+        annotationProcessor 'org.projectlombok:lombok:1.18.36'
+        testCompileOnly 'org.projectlombok:lombok:1.18.36'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+        // Use JUnit BOM to align versions automatically
+        testImplementation platform('org.junit:junit-bom:5.12.0')
+
+        // JUnit 5 dependencies
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+        // Ensure JUnit Platform dependencies are correctly included
+        testImplementation 'org.junit.platform:junit-platform-engine'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     }
 
     tasks {
         compileJava {
-            options.release.set(16)
+            options.release.set(21)
         }
     }
 }
